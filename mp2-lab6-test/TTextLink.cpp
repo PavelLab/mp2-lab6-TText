@@ -41,7 +41,9 @@ void TTextLink::MemCleaner(TText &txt) {
 	}
 	//маркировка свободных звеньев
 	for (TTextLink *pLink = MemHeader.pFree; pLink != NULL; pLink = pLink->pNext) {
-		strcpy_s(pLink->str, "&&&");
+		string tmp = "&&&";
+		tmp += pLink->str;
+		strncpy_s(pLink->str, tmp.c_str(), 80);
 	}
 	//сбор "мусора"
 	for (TTextLink *pLink = MemHeader.pFirst; pLink<=MemHeader.pLast; pLink++) {
