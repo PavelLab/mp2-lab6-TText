@@ -52,7 +52,7 @@ void main() {
 	TText txt;
 	int key, count;
 	txt.Read("1.txt");
-	cout << "PGDN INS DEL ESC" << endl;
+	cout << "PGDN INS DEL(DOWN) ESC" << endl;
 	for (txt.Reset(); !txt.IsEnd(); txt.GoNext()) {
 		cout << txt.GetLine() << endl;
 	}
